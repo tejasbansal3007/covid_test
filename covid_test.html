@@ -1,0 +1,114 @@
+<html>
+    <head>
+        <title>Corona Virus Test | Come here to check basic symptoms</title>
+        <style>
+            body {
+                font-size: 20px;
+             color: chartreuse;
+             background-image: url(covid.jpg);
+             background-repeat: no-repeat;
+             background-size: cover;
+             text-align: center;
+            }
+         
+         button {
+          border-radius: 50%;
+          padding: 10;
+          background-color: aqua;
+          width: 180; height: 75;
+          margin: 50;
+          font-size: 30;
+          color: crimson;
+         }
+         
+         #result {
+          color: red;
+          background-color: darkslategrey;
+         }
+         
+         title {
+          color: cornflowerblue;
+         }
+
+        </style>
+    </head>
+    <body>
+        <p>Click below to check basic symptoms of Corona Virus👇<br>
+        Please type your input in only yes or no.<br><hr>
+        Please note that this is just a symptom test. The real result may vary as Corona Virus can exist without any symptoms.<hr></p>
+        <button onclick="test_start()" id="but" title="After clicking on this you have to answer 3 questions">Click Here!</button>
+        <p id="result"></p>
+        <script>
+            function test_start(){
+                var fever = prompt("Are you feverish?","yes");
+                var cough = prompt("Do you have a cough?","yes");
+                var bodypain = prompt("Do you have bodypain?","yes");
+                var msg;
+                if (fever=="yes"){
+                    if (cough=="yes"){
+                        if (bodypain=="yes"){
+                            msg="You need to contact a doctor(101) or the cops(100) ASAP!";
+                            document.getElementById("result").innerHTML=msg;
+                        }
+                        else if (bodypain=="no"){
+                            msg="If you feel pukish or get a body pain please a contact a doctor(101), in the mean time please stay home";
+                            document.getElementById("result").innerHTML=msg;
+                        }
+                        else {
+                            msg="I didn't get that please try again and only enter yes or no without spaces";
+                            document.getElementById("result").innerHTML=msg;
+                        }
+                    }
+                    else if (cough=="no"){
+                        if (bodypain=="yes"){
+                            msg="Maybe the pain is just due to fever, nevertheless stay home stay safe";
+                            document.getElementById("result").innerHTML=msg;
+                        }
+                        else if (bodypain=="no"){
+                            msg="don't worry its just fever";
+                            document.getElementById("result").innerHTML=msg;
+                        }
+                        else {
+                            msg="I didn't get that please try again and only enter yes or no without spaces";
+                            document.getElementById("result").innerHTML=msg;
+                        }
+                    }
+                }
+                else if (fever=="no"){
+                    if (cough=="yes"){
+                        if (bodypain=="yes"){
+                            msg="Rest well, if there is no improvement in health contact a doctor";
+                            document.getElementById("result").innerHTML=msg;
+                        }
+                        else if (bodypain=="no"){
+                            msg="If you feel pukish or get a bodypain or fever please contact a doctor, in the mean time please stay home";
+                            document.getElementById("result").innerHTML=msg;
+                        }
+                        else {
+                            msg="I didn't get that please try again and only enter yes or no without spaces";
+                            document.getElementById("result").innerHTML=msg;
+                        }
+                    }
+                    else if (cough=="no"){
+                        if (bodypain=="yes"){
+                            msg="Maybe the body pain is due to exersion, nevertheless stay home stay safe";
+                            document.getElementById("result").innerHTML=msg;
+                        }
+                        else if (bodypain=="no"){
+                            msg="You are perfectly fine";
+                         document.getElementById("result").innerHTML=msg;
+                        }
+                        else {
+                            msg="I didn't get that please try again and only enter yes or no without spaces";
+                            document.getElementById("result").innerHTML=msg;
+                        }
+                    }
+                }
+                else {
+                            msg="I didn't get that please try again and only enter yes or no without spaces";
+                            document.getElementById("result").innerHTML=msg;
+                        }
+            }
+        </script>
+    </body>
+</html>
